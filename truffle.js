@@ -11,6 +11,8 @@ module.exports = {
       // geth --rinkeby --rpc --rpcapi db,eth,net,web3,personal --unlock="0x87584f1E69f6233cd18B502660CBea4312CBA5A9" --rpccorsdomain http://localhost:8545
       host: "localhost",
       port: 8545,
+      gasPrice: 20000000000,
+      gas: 4600000, // truffle console > web3.eth.getBlock("pending").gasLimit
       network_id: "4", // Rinkeby ID 4
       from: "0x422baffe21d13d76af304a09d24b284d4b40bb39" // account from which to deploy
     }
