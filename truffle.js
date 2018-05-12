@@ -1,26 +1,23 @@
 module.exports = {
-  migrations_directory: "./migrations",
+  // See <http://truffleframework.com/docs/advanced/configuration>
+  // to customize your Truffle configuration!
   networks: {
     development: {
       host: "localhost",
       port: 8545,
-      network_id: "*" // Match any network id
+      network_id: "*", // eslint-disable-line camelcase
     },
     rinkeby: {
-      // geth attach \\\\.\\pipe\\geth.ipc
-      // geth --rinkeby --rpc --rpcapi db,eth,net,web3,personal --unlock="0x87584f1E69f6233cd18B502660CBea4312CBA5A9" --rpccorsdomain http://localhost:8545
       host: "localhost",
       port: 8545,
-      gasPrice: 20000000000,
-      gas: 4600000, // truffle console > web3.eth.getBlock("pending").gasLimit
-      network_id: "4", // Rinkeby ID 4
-      from: "0x422baffe21d13d76af304a09d24b284d4b40bb39" // account from which to deploy
+      network_id: "4",
+      from: "0xacfa76dbd4a46d5497f8d657cfc8a343c69b584d" // account from which to deploy
     }
   },
   solc: {
     optimizer: {
       enabled: true,
-      runs: 500
+      runs: 200
     }
   }
 };
